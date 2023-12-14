@@ -1,0 +1,73 @@
+.nav-link {
+    transition: text-decoration 0.4s linear;
+}
+
+.nav-link:hover {
+    text-decoration: 3px solid pink underline;
+}
+
+.beer-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    justify-content: center;
+    gap: 3rem;
+    padding: 20px 15px;
+    margin: 0 25px;
+}
+
+.beer-container {
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 15px;
+    max-width: 350px;
+    border: 1px solid lightgray;
+    border-radius: 3%;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.beer-info {
+    flex: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 10px;
+    margin: 10px;
+}
+
+.beer-title h2 {
+    font-size: 1.2em;
+}
+
+.beer-title h2,
+.beer-volume p {
+    font-weight: bold;
+}
+
+.beer-description p {
+    font-style: italic;
+}
+
+.img-wrapper > img {
+    margin: 0 20px;
+    width: 100px;
+    height: 300px;
+}
+
+.btn-read {
+    border: none;
+    padding: 7px 5px;
+    transition: background-color 0.4s ease-in;
+    background-color: rgb(244, 179, 229);
+    text-align: center;
+}
+
+.btn-read:hover {
+    background-color: antiquewhite;
+}
