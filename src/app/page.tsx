@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { fetchBeers } from "./lib/api";
+
 import BeerCard from "./components/BeerCard";
+import SurpriseCard from "./components/SurpriseCard";
+
 import "./styles/home.css";
 
 export default function Home() {
@@ -12,9 +15,12 @@ export default function Home() {
         const fetchData = async () => {
             try {
                 const data = await fetchBeers();
-                const sortedData = data.toSorted((a: any, b: any) => {
-                    return a.abv - b.abv;
-                });
+                const sortedData = data
+                    .slice(0, 23)
+                    .toSorted((a: any, b: any) => {
+                        return a.abv - b.abv;
+                    });
+
                 setBeers(sortedData);
             } catch (error) {
                 console.error(error);
@@ -38,16 +44,7 @@ export default function Home() {
                             tagline={beer.tagline}
                         />
                     ))}
-                    <BeerCard
-                        key={Math.random() * 100}
-                        id={5}
-                        name={"Surprise"}
-                        image={
-                            "https://cdn.pixabay.com/photo/2016/03/08/07/08/question-1243504_1280.png"
-                        }
-                        abv={"**"}
-                        tagline={"Do you want to try something new?"}
-                    />
+                    <SurpriseCard />
                 </div>
             </main>
         </>

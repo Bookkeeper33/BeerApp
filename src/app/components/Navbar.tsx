@@ -47,7 +47,12 @@ export default function Nav() {
                             </Link>
                         </li>
                         <li className="nav-item me-lg-4 bg-dark  ps-3 pe-3">
-                            <a className="nav-link text-light">Contact us</a>
+                            <Link
+                                href="/contact"
+                                className="nav-link text-light"
+                            >
+                                Contact us
+                            </Link>
                         </li>
                     </ul>
                 </div>

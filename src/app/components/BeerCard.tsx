@@ -1,42 +1,36 @@
 "use client";
-import Icon from "@mdi/react";
-import { mdiChevronRight } from "@mdi/js";
+
 import { useRouter } from "next/navigation";
+import SkeletonCard from "./SkeletonCard";
 
-type Card = {
-    id: Number;
-    name: String;
-    image: String;
-    abv: String;
-    tagline: String;
-};
-
-export default function BeerCard({ id, name, image, abv, tagline }: Card) {
+export default function BeerCard({
+    id,
+    name,
+    image,
+    abv,
+    tagline,
+}: {
+    id: number;
+    name: string;
+    image: string;
+    abv: string;
+    tagline: string;
+}) {
     const router = useRouter();
+
     const handleReadMore = (id: Number) => {
         router.push(`/beer/${id}`);
     };
 
     return (
-        <div className="beer-container">
-            <div className="img-wrapper">
-                <img src={image} alt={name} />
-            </div>
-            <div className="beer-info">
-                <div className="beer-title">
-                    <h2>{name}</h2>
-                </div>
-                <div className="beer-description">
-                    <p>{tagline}</p>
-                </div>
-                <div className="beer-volume">
-                    <p className="text-bold">ABV {abv}</p>
-                </div>
-                <button className="btn-read" onClick={() => handleReadMore(id)}>
-                    {name === "Surprise" ? "Random beer" : "Read more"}
-                    <Icon path={mdiChevronRight} size={1} />
-                </button>
-            </div>
-        </div>
+        <SkeletonCard
+            id={id}
+            name={name}
+            image={image}
+            abv={abv}
+            tagline={tagline}
+            btnText={"Read more"}
+            handler={() => handleReadMore(id)}
+        />
     );
 }

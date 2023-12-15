@@ -1,0 +1,187 @@
+form {
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    /* margin: 30px 35px; */
+    padding: 45px 30px;
+    max-width: 700px;
+    align-self: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 700px;
+    gap: 25px;
+}
+
+.form-control {
+    display: flex;
+    flex-flow: column;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.form-checkbox {
+    align-self: start;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.form h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+input {
+    appearance: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    border: 1px solid lightgray;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgb(46, 179, 223);
+}
+
+input:not(:focus):not(:placeholder-shown):invalid ~ .error-message,
+.error-password {
+    display: block;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+    border-color: lightgray;
+}
+
+input[type="checkbox"] {
+    align-self: center;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: rgb(46, 179, 223);
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid lightgray;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em rgb(182, 223, 225);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+textarea {
+    resize: none;
+}
+
+.error-password {
+    display: none;
+    font-size: 0.6rem;
+    margin: 2px 0;
+    color: red;
+    text-transform: none;
+}
+
+.error-message {
+    display: none;
+    font-size: 0.6rem;
+    margin: 2px 0;
+    color: red;
+    text-transform: none;
+}
+
+.button-section {
+    /* padding: 7px 0; */
+    margin: 20px 0 5px 0;
+}
+.button-section p {
+    margin: 16px auto;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.button-section a {
+    text-decoration: none;
+    color: rgb(200, 132, 44);
+}
+
+.button-section button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(200, 132, 44);
+    border: none;
+    color: #fff;
+    -webkit-box-shadow: 1px -1px 5px 1px rgba(0, 0, 0, 0.11);
+    box-shadow: 1px -1px 5px 1px rgba(0, 0, 0, 0.11);
+    transition: all 0.3s ease-in-out;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.button-section button:hover {
+    transform: scale(1.1);
+    background-color: rgb(238, 161, 59);
+}
+
+.button-section button:active {
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 400px) {
+    main {
+        flex-flow: row wrap;
+    }
+    .logo h2 {
+        font-size: 2rem;
+    }
+    form {
+        padding: 15px;
+    }
+    .controls {
+        flex-direction: column;
+    }
+    .form-control {
+        width: 100%;
+    }
+}
