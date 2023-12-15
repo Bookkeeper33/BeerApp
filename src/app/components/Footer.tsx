@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="d-flex justify-content-between align-items-center flex-wrap bg-dark">
+        <footer className="d-flex justify-content-between align-items-center flex-wrap bg-dark mt-5">
             <div className="p-3 mx-auto">
                 <h2 className="text-white fs-3">Brewery app</h2>
             </div>
